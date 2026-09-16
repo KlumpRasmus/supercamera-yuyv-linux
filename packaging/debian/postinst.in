@@ -1,0 +1,24 @@
+#!/bin/sh
+set -e
+
+MODULE="supercamera-yuyv"
+VERSION="@VERSION@"
+KERNEL="$(uname -r)"
+
+case "$1" in
+    configure)
+        if ! dkms status -m "$MODULE" -v "$VERSION" 2>/dev/null | grep -q "^${MODULE}/${VERSION}"; then
+            dkms add -m "$MODULE" -v "$VERSION"
+        fi
+
+        if [ -e "/lib/modules/${KERNEL}/build/Makefile" ]; then
+            dkms install -m "$MODULE" -v "$VERSION" -k "$KERNEL"
+            modprobe supercamera_yuyv 2>/dev/null || true
+        else
+            echo "supercamera-yuyv-dkms: headers for ${KERNEL} are not installed;" >&2
+            echo "the module is registered with DKMS and will build when headers are available." >&2
+        fi
+        ;;
+esac
+
+exit 0
