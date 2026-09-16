@@ -22,7 +22,7 @@ Developed and tested on Ubuntu 26.04 with Linux `7.0.0-31-generic`.
 Build the `.deb` from the repository:
 
 ```sh
-./scripts/build-deb.sh
+sh scripts/build-deb.sh
 ```
 
 Then install it:
