@@ -1,0 +1,13 @@
+Package: supercamera-yuyv-dkms
+Version: @VERSION@-1
+Section: kernel
+Priority: optional
+Architecture: all
+Depends: dkms (>= 3.0.11)
+Recommends: linux-headers-generic, v4l-utils
+Maintainer: KlumpRasmus
+Homepage: https://github.com/KlumpRasmus/supercamera-yuyv-linux
+Description: DKMS V4L2 driver for 2ce3:3828 SuperCamera YUYV endoscope
+ Experimental out-of-tree V4L2 driver for the Geek/Szitman SuperCamera USB
+ endoscope variant exposing interface 0, bulk endpoints 0x82/0x02, and a
+ 320x240 YUYV video stream. DKMS rebuilds the module for new kernels.
