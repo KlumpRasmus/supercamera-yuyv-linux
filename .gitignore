@@ -1,55 +1,22 @@
-# Prerequisites
-*.d
-
-# Object files
+# Kernel module build products
 *.o
 *.ko
-*.obj
-*.elf
-
-# Linker output
-*.ilk
-*.map
-*.exp
-
-# Precompiled Headers
-*.gch
-*.pch
-
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
-
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
-
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
-
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
-
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
+*.ko.*
+*.mod
+*.mod.c
+*.order
+*.symvers
 Module.symvers
-Mkfile.old
-dkms.conf
+modules.order
+.tmp_versions/
+.*.cmd
 
-# debug information files
-*.dwo
+# Packaging output
+build/
+dist/
+*.deb
+*.tar.gz
+
+# Editor / OS noise
+*~
+.DS_Store
