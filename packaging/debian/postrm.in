@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+VERSION="@VERSION@"
+
+case "$1" in
+    purge)
+        rm -rf "/var/lib/dkms/supercamera-yuyv/${VERSION}" 2>/dev/null || true
+        ;;
+esac
+
+exit 0
