@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+MODULE="supercamera-yuyv"
+VERSION="@VERSION@"
+
+case "$1" in
+    remove|deconfigure)
+        modprobe -r supercamera_yuyv 2>/dev/null || true
+        dkms remove -m "$MODULE" -v "$VERSION" --all 2>/dev/null || true
+        ;;
+esac
+
+exit 0
